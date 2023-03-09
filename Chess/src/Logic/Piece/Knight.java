@@ -23,6 +23,12 @@ public class Knight extends Piece {
 
         return false;
     }
+
+    @Override
+    public boolean canAttack(King king, Piece[][] board) {
+        // TODO Auto-generated method stub
+        return false;
+    }
     
     private boolean isValidPosition(final int x, final int y) {
         return x >= 0 && x <= 7 && y >= 0 && y <= 7;

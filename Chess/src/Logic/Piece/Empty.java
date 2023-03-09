@@ -15,4 +15,10 @@ public class Empty extends Piece {
     	
 		return false;
     }
+
+    @Override
+    public boolean canAttack(King king, Piece[][] board) {
+        // TODO Auto-generated method stub
+        return false;
+    }
 }
