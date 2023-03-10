@@ -1,10 +1,15 @@
 package Logic;
 
-class Player {
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Player {
     private PieceColor color;
+    private Scanner scanner;
 
     public Player(PieceColor color) {
         this.color = color;
+        this.scanner = new Scanner(System.in);
     }
 
     public PieceColor getColor() {
@@ -13,18 +18,35 @@ class Player {
 
     public void makeMove(Board board) {
         int startX = 0, startY = 0, endX = 0, endY = 0;
-        System.out.println("Choose piece:");
-        try (Scanner scanner = new Scanner(System.in)) {
+        try {
+            System.out.println("Choose piece:");
+
+            System.out.print("X coordinate: ");
             startX = scanner.nextInt();
+
+            System.out.print("Y coordinate: ");
             startY = scanner.nextInt();
 
             System.out.println("Make move");
-            endX   = scanner.nextInt();
-            endY   = scanner.nextInt();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+
+            System.out.print("X coordinate: ");
+            endX = scanner.nextInt();
+
+            System.out.print("Y coordinate: ");
+            endY = scanner.nextInt();
+            System.out.println("\n===================================================\n");
+            board.movePiece(startX, startY, endX, endY);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter integer values only.");
+            scanner.next();
+            makeMove(board);
         }
-        board.movePiece(startX, startY, endX, endY);
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        scanner.close();
     }
 }
 
