@@ -1,4 +1,4 @@
-package Chess;
+package Logic;
 
 class Player {
     private PieceColor color;

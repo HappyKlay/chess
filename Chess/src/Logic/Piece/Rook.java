@@ -1,6 +1,6 @@
-package Chess.Piece;
+package Logic.Piece;
 
-import Chess.PieceColor;
+import Logic.PieceColor;
 
 public class Rook extends Piece {
 	public Rook(final PieceColor color) {

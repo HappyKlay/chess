@@ -1,5 +1,5 @@
-package Main;
-import Chess.ChessGame;
+package Chess;
+import Logic.ChessGame;
 
 public class Main {
 	public static void main(String[] args) {

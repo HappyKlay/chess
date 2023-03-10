@@ -1,6 +1,6 @@
-package Chess;
+package Logic;
 
-import Chess.Piece.*;
+import Logic.Piece.*;
 
 public class Board {
 	private Piece[][] board;

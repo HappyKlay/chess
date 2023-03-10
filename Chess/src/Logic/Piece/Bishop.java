@@ -1,8 +1,8 @@
-package Chess.Piece;
+package Logic.Piece;
 
 import java.util.Objects;
 import java.util.stream.IntStream;
-import Chess.PieceColor;
+import Logic.PieceColor;
 
 public class Bishop extends Piece {
     public Bishop(final PieceColor color) {
@@ -35,4 +35,10 @@ public class Bishop extends Piece {
     private boolean isValidPosition(final int x, final int y) {
         return x >= 0 && x <= 7 && y >= 0 && y <= 7;
     }
+
+	@Override
+	public boolean canAttack(King king, Piece[][] board) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

@@ -1,6 +1,4 @@
-package Chess.Piece;
-
-import Chess.Board;
+package Logic.Piece;
 
 public class Empty extends Piece {
     public Empty() {
