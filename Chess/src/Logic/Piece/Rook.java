@@ -46,6 +46,11 @@ public class Rook extends Piece {
 		return false;
 	}
 
+	@Override
+	public String getSymbol() {
+		return "R";
+	}
+
 	private boolean isValidPosition(final int x, final int y) {
 		return x >= 0 && x <= 7 && y >= 0 && y <= 7;
 	}

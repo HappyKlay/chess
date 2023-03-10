@@ -19,4 +19,10 @@ public class Empty extends Piece {
         // TODO Auto-generated method stub
         return false;
     }
+
+    @Override
+    public String getSymbol() {
+        // TODO Auto-generated method stub
+        return "--";
+    }
 }

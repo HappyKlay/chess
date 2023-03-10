@@ -41,4 +41,9 @@ public class Bishop extends Piece {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+    @Override
+    public String getSymbol() {
+        return "B";
+    }
 }

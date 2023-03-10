@@ -29,6 +29,11 @@ public class Knight extends Piece {
         // TODO Auto-generated method stub
         return false;
     }
+
+    @Override
+    public String getSymbol() {
+        return "Kn";
+    }
     
     private boolean isValidPosition(final int x, final int y) {
         return x >= 0 && x <= 7 && y >= 0 && y <= 7;

@@ -15,5 +15,7 @@ public abstract class Piece {
         return color;
     }
 
+    public abstract String getSymbol();
+
 	public abstract boolean canAttack(King king, Piece[][] board);
 }

@@ -4,8 +4,10 @@ import Logic.Piece.*;
 
 public class Board {
 	private Piece[][] board;
-
+	private final int ROWS = 8;
+	private final int COLS = 8;
 	public Board() {
+		board = new Piece[ROWS][COLS];
 		// Set up the white pieces
 		board[0][0] = new Rook(PieceColor.WHITE);
 		board[0][1] = new Knight(PieceColor.WHITE);
@@ -41,6 +43,15 @@ public class Board {
 
 	}
 
+	public void printBoard() {
+		for (Piece[] row : board) {
+			for (Piece piece : row) {
+				System.out.print(piece.getSymbol() + "\t");
+			}
+			System.out.println();
+		}
+	}
+
 	public Piece getPiece(int x, int y) {
 		return board[x][y];
 	}
@@ -59,6 +70,12 @@ public class Board {
 			board[endX][endY] = board[startX][startY];
 			board[startX][startY] = new Empty();
 		}
+	}
+
+	public boolean isWinner() {
+		King blackKing = findKing(PieceColor.BLACK);
+		King whiteKing = findKing(PieceColor.WHITE);
+		return isKingInCheckmate(blackKing.getColor()) || isKingInCheckmate(whiteKing.getColor());
 	}
 
 	private boolean isValidMove(int startX, int startY, int endX, int endY) {
